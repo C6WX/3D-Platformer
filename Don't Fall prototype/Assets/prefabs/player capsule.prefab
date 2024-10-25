@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 274600680622767094}
   - component: {fileID: 274600680622767089}
-  - component: {fileID: 274600680622767088}
+  - component: {fileID: 379184817073490020}
   - component: {fileID: 3011408498503750209}
   m_Layer: 0
   m_Name: Main Camera
@@ -85,7 +85,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &274600680622767088
+--- !u!81 &379184817073490020
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 274600680719922227}
   - component: {fileID: 274600680719922226}
   - component: {fileID: 6528512216015710022}
-  - component: {fileID: 3165896527239179243}
+  - component: {fileID: 7894881917531737353}
   - component: {fileID: 5450512604327535360}
   m_Layer: 0
   m_Name: player capsule
@@ -218,10 +218,10 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 96
+  m_Constraints: 64
   m_CollisionDetection: 0
---- !u!65 &3165896527239179243
-BoxCollider:
+--- !u!136 &7894881917531737353
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -238,8 +238,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 2, z: 1}
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5450512604327535360
 MonoBehaviour:

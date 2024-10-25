@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DoorToNextScene : MonoBehaviour
 {
-    [SerializeField] float levelLoadDelay = 1f;
+    private int levelLoadDelay = 0;
 
     private void OnCollisionEnter(Collision other)
     {

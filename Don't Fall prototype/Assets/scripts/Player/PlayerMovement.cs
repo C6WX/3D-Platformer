@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float MoveSpeed = 10f;
-    [SerializeField] float XRotateSpeed = 10f;
-    [SerializeField] float YRotateSpeed = 10f;
+    public float MoveSpeed = 10f;
+    public float XRotateSpeed = 10f;
+    public float YRotateSpeed = 10f;
     public Vector3 jump;
     public float jumpForce = 2.0f;
     public bool isGrounded;
-    Rigidbody rb;
-    public float yrValue;
-    float xrValue;
+    private Rigidbody rb;
+    private float yrValue;
+    private float xrValue;
+
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         moveplayer();
         rotateplayer();
@@ -36,19 +37,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
         jump = new Vector3(0.0f, 2.0f, 0.0f);
     }
 
     //when the player is colliding with the ground, is grounded = true
-    void OnCollisionStay()
+    private void OnCollisionStay()
     {
         isGrounded = true;
     }
    
-     void moveplayer()
+     private void moveplayer()
     {
         //moves the player when WASD is pressed and changes the movement speed based the the value of the variable MoveSpeed
         float xValue = Input.GetAxis("Horizontal") * Time.deltaTime * MoveSpeed;
@@ -56,14 +57,14 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(zValue, 0, xValue);
     }
 
-    void rotateplayer()
+    private void rotateplayer()
     {
         xrValue = Input.GetAxis("Mouse X") * XRotateSpeed * Time.deltaTime;
         yrValue = Input.GetAxis("Mouse Y") * YRotateSpeed * Time.deltaTime;
 
         //allows the player to turn horizontally by using the mouse
 
-        //transform.Rotate(0, xrValue, 0);
+        //transform.Rotate(xrValue, yrValue, 0);
         //allows the player to turn vertically by using the mouse
         transform.Rotate(0f, xrValue,0f);
     }

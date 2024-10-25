@@ -7,7 +7,7 @@ public class spinner : MonoBehaviour
     public float xAngle = 0;
     public float yAngle = 0;
     public float zAngle = 0;
-    public int rotateSpeed;
+    public float rotateSpeed;
 
     // Start is called before the first frame update
     void Start()
