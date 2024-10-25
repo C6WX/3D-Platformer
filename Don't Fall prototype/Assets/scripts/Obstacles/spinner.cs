@@ -9,12 +9,6 @@ public class spinner : MonoBehaviour
     public float zAngle = 0;
     public float rotateSpeed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
