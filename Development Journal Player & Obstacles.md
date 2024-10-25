@@ -189,7 +189,7 @@ public class DoorToNextScene : MonoBehaviour
 
 ## Outcome
 
-- [Video Link](https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley)
+- [Video Link](https://youtu.be/6Ohrfzpe-L4)
 
 ## Critical Reflection
 
