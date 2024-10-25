@@ -1,25 +1,16 @@
-# [TASK NAME]
+# 3D Platformer - Player & Obstacles
 
-[Module Name]
+Fundementals of Game Development
 
-[Student Name]
+Callum Wade 
 
-[Student ID]
+2404781
 
 ## Research
 
 ### What sources or references have you identified as relevant to this task?
-
-- What type of sources did you identity and want to explore? How would you justify it in reference to the brief set? Think about the focus of the brief.
-- What type of sources do you want to avoid? How could these kinds of sources be detrimental to the user experience, immersion or implementation?
-
-
-```Markdown
-# Example
-
-As I have done research regarding the audio identity and developing audio assets for this project in previous formative assignments. I wanted to look into specific Unreal and Wwise systems that will help create a more immersive experience. I wanted to focus on official documentation to improve my ability to learn new techniques without explicit instructions.
-
-I also wanted a creative source to help develop the parachute audio assets and learn how it should function within the game’s narrative.
+```markdown
+- One thing that I found myself reading into for this task is using physics materials to add friction to obstacles. 
 ```
 
 #### Sources
@@ -29,6 +20,16 @@ I also wanted a creative source to help develop the parachute audio assets and l
 - An ending paragraph stating what you enjoyed or disliked, what you agreed with or not agree with.
 
 ```Markdown
+
+# Documentation
+
+# Game Source
+ Super Mario 3D World is a 3D platfromer game developed by Nintendo, it uses very similar mechanics to the 3D platformer I am making. (Super Mario 3D World, 2013).
+
+ Within the game you are able to move the camera around the player and it is also a 3D platformer where the player can interact with obstacles and jump. 
+
+ I found their use of these mechanics to be a great example for my game and future 3D platformer games.
+
 # Example Documentation
 
 I wanted to create an emitter which takes advantage of spread and focus, which was a technique I learned from a previous assignment where the spatialisation of an object changes depending on distance. I also wanted to work specifically with a `Spline Component` to encapsulate the entire ship with an “Ocean Emitter”. This led me to read the Unreal Blueprints API References and Wwise 3D Positioning documentation (Unreal Engine Blueprint API Reference | Unreal Engine 5.4 Documentation | Epic Developer Community, s.d., AudioKinetic Inc, s.d.).
@@ -86,17 +87,8 @@ public class HelloWorld : MonoBehaviour
 
 Here you can put links required for delivery of the task, ensure they are properly labelled appropriately and the links function. The required components can vary between tasks, you can find a definative list in the Assessment Information. Images and code snippets can be embedded and annotated if appropriate.
 
-- [Example Video Link](https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley)
-- [Example Repo Link](https://github.com/githubtraining/hellogitworld)
-- [Example Build Link](https://samperson.itch.io/desktop-goose)
+- [Video Link](https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=C4v0qHaYuEISAC01" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-*Figure 3. An example of an embedded video using a HTML code snippet.*
-
-<iframe frameborder="0" src="https://itch.io/embed/2374819" width="552" height="167"><a href="https://bitboyb.itch.io/nephilim-resurrection">Nephilim Resurrection (BETA) by bitboyb</a></iframe>
-
-*Figure 4. An example of a itch.io widget*
 
 ## Critical Reflection
 
