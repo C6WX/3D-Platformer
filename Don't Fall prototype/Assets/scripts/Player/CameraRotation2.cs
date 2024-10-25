@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraRotation2 : MonoBehaviour
 {
-    [SerializeField] float XRotateSpeed = 10f;
+    public float XRotateSpeed = 10f;
 
     // Update is called once per frame
     void Update()

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float MoveSpeed = 10f;
-    public float XRotateSpeed = 10f;
-    public float YRotateSpeed = 10f;
+    public float moveSpeed = 10f;
+    public float xRotateSpeed = 10f;
+    public float yRotateSpeed = 10f;
     public Vector3 jump;
     public float jumpForce = 2.0f;
     public bool isGrounded;
@@ -49,18 +49,23 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = true;
     }
    
-     private void moveplayer()
+    private void moveplayer()
     {
-        //moves the player when WASD is pressed and changes the movement speed based the the value of the variable MoveSpeed
-        float xValue = Input.GetAxis("Horizontal") * Time.deltaTime * MoveSpeed;
-        float zValue = Input.GetAxis("Vertical") * Time.deltaTime * MoveSpeed;
-        transform.Translate(zValue, 0, xValue);
+        //moves the player when WASD is pressed and changes the movement speed based the the value of the variable moveSpeed
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+        Vector3 movement = new Vector3(moveVertical, moveHorizontal, 0f).normalized;
+        rb.AddForce(movement * moveSpeed);
+        //float xValue = Input.GetAxis("Horizontal") * Time.deltaTime * MoveSpeed;
+        //float zValue = Input.GetAxis("Vertical") * Time.deltaTime * MoveSpeed;
+        //transform.Translate(zValue, 0, xValue);
+
     }
 
     private void rotateplayer()
     {
-        xrValue = Input.GetAxis("Mouse X") * XRotateSpeed * Time.deltaTime;
-        yrValue = Input.GetAxis("Mouse Y") * YRotateSpeed * Time.deltaTime;
+        xrValue = Input.GetAxis("Mouse X") * xRotateSpeed * Time.deltaTime;
+        yrValue = Input.GetAxis("Mouse Y") * yRotateSpeed * Time.deltaTime;
 
         //allows the player to turn horizontally by using the mouse
 
