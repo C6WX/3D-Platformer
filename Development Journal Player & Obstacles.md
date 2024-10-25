@@ -37,22 +37,99 @@ I found the website to be very helpful in teaching me how to use physics materia
 
 ### What was the process of completing the task? What influenced your decision making?
 
-- What was the process of completing the task at hand? Did you do any initial planning?
-- Did you receive any feedback from users, peers or lecturers? How did you react to it?
+- I started this task by creating the movement script for the player.
 
 <br>
 
 ```csharp
-using UnityEngine;
-public class HelloWorld : MonoBehaviour 
+private void Moveplayer()
 {
-    public void Start() 
-    {
-        Debug.Log("Hello World!");
-    }
+    //moves the player when WASD is pressed and changes the movement speed based the the value of the variable moveSpeed
+    float moveHorizontal = Input.GetAxis("Horizontal");
+    float moveVertical = Input.GetAxis("Vertical");
+    Vector3 cameraForward = Vector3.Scale(_mainCamera.transform.forward, new Vector3(1, 0, 1)).normalized;
+    Vector3 movement = (cameraForward * moveVertical + _mainCamera.transform.right * -moveHorizontal).normalized;        
+    rb.AddForce(movement * moveSpeed);
 }
 ```
-*Figure 1. An example of using a script as a figure. This script has a `Start()` method!*
+*Figure 1. The script used to move the player by using the rigidbody on the player and adding force. This void is used in the update method*
+
+- Next I implemented horizontal player rotation into the game
+
+```csharp
+private void Rotateplayer()
+{
+    xrValue = Input.GetAxis("Mouse X") * xRotateSpeed * Time.deltaTime;
+    //allows the player to turn vertically by using the mouse
+    transform.Rotate(0f, xrValue,0f);
+}
+```
+*Figure 2. This script gets the horizontal mouse movement and rotates the player based on the mouse movement. This void is also called in the update.*
+
+- Next I added double jumping into the game
+
+```csharp
+   //when the player is colliding with the ground, is grounded = true
+   private void OnCollisionStay()
+   {
+       isGrounded = true;
+   }
+```
+*Figure 3. Detects when the player is on the ground*
+
+```csharp
+ if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+ {
+     rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+     isGrounded = false;
+ }
+```
+*Figure 4. When space is pressed and the player is on the ground, the player can jump.*
+
+-After adding jumping, I added camera movement.
+```csharp
+public Transform target;
+public float rotationSpeed = 5f, zoomSpeed = 5f;
+public float minZoomDistance = 2f, maxZoomDistance = 15f;
+
+private float _rotationX = 0f, _rotationY = 0f, _currentZoomDistance = 10f;
+
+private void Start()
+{
+    Cursor.lockState = CursorLockMode.Locked;
+    if (target == null) target = GameObject.FindWithTag("Player").transform;
+}
+
+private void Update()
+{
+    float mouseX = Input.GetAxis("Mouse X") * rotationSpeed;
+    float mouseY = Input.GetAxis("Mouse Y") * rotationSpeed;
+
+    _rotationX -= mouseY;
+    _rotationY += mouseX;
+    _rotationX = Mathf.Clamp(_rotationX, -90f, 90f);
+
+    Quaternion targetRotation = Quaternion.Euler(_rotationX, _rotationY, 0f);
+
+    transform.position = target.position - targetRotation * Vector3.forward * _currentZoomDistance;
+    transform.rotation = targetRotation;
+
+    if (Input.GetKeyDown(KeyCode.Escape)) Cursor.lockState = CursorLockMode.None;
+
+    float scrollWheel = Input.GetAxis("Mouse ScrollWheel");
+    if (scrollWheel != 0)
+    {
+        float zoomAmount = scrollWheel * zoomSpeed;
+        UpdateZoomDistance(zoomAmount);
+    }
+}
+
+private void UpdateZoomDistance(float zoomAmount)
+{
+    _currentZoomDistance = Mathf.Clamp(_currentZoomDistance - zoomAmount, minZoomDistance, maxZoomDistance);
+}
+```
+*Figure 5. This script allows the camera to be rotated around the player by using the mouse*
 
 ### What creative or technical approaches did you use or try, and how did this contribute to the outcome?
 
