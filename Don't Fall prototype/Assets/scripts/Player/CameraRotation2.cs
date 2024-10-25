@@ -9,10 +9,10 @@ public class CameraRotation2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rotatecamera();
+        Rotatecamera();
     }
 
-    void rotatecamera()
+    void Rotatecamera()
     {   
         float xrValue = Input.GetAxis("Mouse X") * Time.deltaTime * XRotateSpeed;
         transform.Rotate(0, xrValue, 0);

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 274600680622767094}
   - component: {fileID: 274600680622767089}
   - component: {fileID: 379184817073490020}
-  - component: {fileID: 8582373596625420813}
+  - component: {fileID: 6586585789701597842}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -93,7 +93,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274600680622767091}
   m_Enabled: 1
---- !u!114 &8582373596625420813
+--- !u!114 &6586585789701597842
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,10 +102,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 274600680622767091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59612f2230d8e1040be16b124da6ea4a, type: 3}
+  m_Script: {fileID: 11500000, guid: cd87253defec8c542924f9a3c6e4bf52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XRotateSpeed: 10
+  target: {fileID: 274600680719922220}
+  rotationSpeed: 5
+  zoomSpeed: 5
+  minZoomDistance: 2
+  maxZoomDistance: 15
 --- !u!1 &274600680719922223
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +222,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 64
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!136 &7894881917531737353
 CapsuleCollider:
@@ -255,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87496900136154a46b7b9c719603a103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 2
   xRotateSpeed: 10
   yRotateSpeed: 10
   jump: {x: 0, y: 0, z: 0}
