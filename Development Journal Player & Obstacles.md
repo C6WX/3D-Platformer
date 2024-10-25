@@ -131,25 +131,65 @@ private void UpdateZoomDistance(float zoomAmount)
 ```
 *Figure 5. This script allows the camera to be rotated around the player by using the mouse*
 
+-Then I made a script to rotate the spinning platforms
+```csharp
+public class spinner : MonoBehaviour
+{
+    public float xAngle = 0;
+    public float yAngle = 0;
+    public float zAngle = 0;
+    public float rotateSpeed;
+
+    // Update is called once per frame
+    void Update()
+    {
+        transform.Rotate(xAngle * rotateSpeed, yAngle * rotateSpeed, zAngle * rotateSpeed);    
+    }
+}
+```
+*Figure 6. This script makes whatever object it is on to rotate in different directions depending on the variable values it is given*
+
+- Lastly I made a script for the end goal of each level to take the player to the next level.
+```csharp
+public class DoorToNextScene : MonoBehaviour
+{
+    private int levelLoadDelay = 0;
+
+    private void OnCollisionEnter(Collision other)
+    {
+        //when the player touches the door, the next level is loaded
+        if (other.gameObject.tag == "Player")
+        {
+            Invoke("LoadNextLevel", levelLoadDelay);
+        }
+    }
+
+    void LoadNextLevel()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+        if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
+        {
+            nextSceneIndex = 0;
+        }
+        SceneManager.LoadScene(nextSceneIndex);
+    }
+}
+```
+*Figure 7. This script checks if the player has collided with the door and if it has, it loads the next level*
+
 ### What creative or technical approaches did you use or try, and how did this contribute to the outcome?
 
-- Did you try any new software or approaches? How did the effect development?
-
-<br>
-
-![onhover image description](https://beforesandafters.com/wp-content/uploads/2021/05/Welcome-to-Unreal-Engine-5-Early-Access-11-16-screenshot.png)
-*Figure 2. An example of an image as a figure. This image shows where to package your Unreal project!.*
+- I added in a main menu and made multiple levels to test the physics within my game in different situations. In level 1 I tested movement, level 2 I tested jumping, level 3 I tested physics on small objects and on level 4 I tested player interactions on spinning obstacles.
+- At the end of each level is a door that takes the player into the next level. 
 
 ### Did you have any technical difficulties? If so, what were they and did you manage to overcome them?
 
-- Did you have any issues completing the task? How did you overcome them?
+- One difficulty I had was with the spinning objects as it would either do nothing to the player or throw them completely off the level. To fix this I gave the spinners physics materials so that there was friction on the object causing it to do it's intended purpose of dragging the player with it as it moves
 
 ## Outcome
 
-Here you can put links required for delivery of the task, ensure they are properly labelled appropriately and the links function. The required components can vary between tasks, you can find a definative list in the Assessment Information. Images and code snippets can be embedded and annotated if appropriate.
-
 - [Video Link](https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley)
-
 
 ## Critical Reflection
 
