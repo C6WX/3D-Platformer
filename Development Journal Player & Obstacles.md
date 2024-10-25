@@ -195,13 +195,12 @@ public class DoorToNextScene : MonoBehaviour
 
 ### What did or did not work well and why?
 
-- What did not work well? What parts of the assignment that you felt did not fit the brief or ended up being lacklustre.
-- What did you think went very well? Were there any specific aspects you thought were very good?
+- Something that worked well is the fact that I already had the levels and main menu built as I had previously worked on this game before it was a task.
+- One thing that didm't go well was the player falling over. This is because I want a physics based platformer with interesting physics but that also means physics working weird such as the player falling over. This means I had to use rotation lock which limits the interesting physics I can use.
 
 ### What would you do differently next time?
 
-- Are there any new approaches, methodologies or different software that you wish to incorporate if you have another chance?
-- Is there another aspect you believe should have been the focus?
+- Next time i would look more at the examples within the task as some of the scripts were helpful when I checked them and solved some of my problems
 
 ## Bibliography
 
