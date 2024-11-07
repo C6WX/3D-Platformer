@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 100984341}
   m_Layer: 0
   m_Name: floor (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 861314587}
   m_Layer: 0
   m_Name: floor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -564,6 +564,10 @@ PrefabInstance:
     - target: {fileID: 2246942950009897828, guid: 385c823ad991ef74d95e9ac9396243a3, type: 3}
       propertyPath: m_Name
       value: Rotating object 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246942950009897828, guid: 385c823ad991ef74d95e9ac9396243a3, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 7540730247763593578, guid: 385c823ad991ef74d95e9ac9396243a3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -812,6 +816,10 @@ PrefabInstance:
     - target: {fileID: 2246942950009897828, guid: 385c823ad991ef74d95e9ac9396243a3, type: 3}
       propertyPath: m_Name
       value: Rotating object 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246942950009897828, guid: 385c823ad991ef74d95e9ac9396243a3, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 7540730247763593578, guid: 385c823ad991ef74d95e9ac9396243a3, type: 3}
       propertyPath: m_LocalPosition.x
