@@ -144,9 +144,11 @@ To deal with the audio and particle system problem, I removed all the raycasts a
 
 Here you can put links required for delivery of the task, ensure they are properly labelled appropriately and the links function. The required components can vary between tasks, you can find a definative list in the Assessment Information. Images and code snippets can be embedded and annotated if appropriate.
 
-- [Example Video Link](https://youtu.be/yhSYsbFSK6Y)
+- [Youtube Video](https://youtu.be/yhSYsbFSK6Y)
 
-<img width="300" height="300" src="Level 1 Screenshot.png"> 
+<img width="500" height="500" src="Level 1 Screenshot.png"> 
+<img width="500" height="500" src="Level 2 Screenshot.png"> 
+<img width="500" height="500" src="level 3 Screenshot.png"> 
 
 ## Critical Reflection
 
