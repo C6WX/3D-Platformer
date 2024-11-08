@@ -225,7 +225,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &7894881917531737353
 CapsuleCollider:
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87496900136154a46b7b9c719603a103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 2
   xRotateSpeed: 10
   yRotateSpeed: 10
   jump: {x: 0, y: 0, z: 0}
@@ -276,6 +276,8 @@ MonoBehaviour:
   rayColor: {r: 1, g: 0, b: 0, a: 1}
   dustParticleSystem: {fileID: 3479388269508282388}
   maxJumpCount: 2
+  catapultXValue: 10
+  catapultYValue: 10
 --- !u!82 &6304535024630360183
 AudioSource:
   m_ObjectHideFlags: 0

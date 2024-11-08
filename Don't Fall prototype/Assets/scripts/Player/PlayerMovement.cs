@@ -35,6 +35,9 @@ public class PlayerMovement : MonoBehaviour
     // Jumping variables for double jump
     private int jumpCount = 0; // Track number of jumps performed
     public int maxJumpCount = 2; // Max number of jumps (1 for double jump)
+    
+    public int catapultXValue = 10;
+    public int catapultYValue = 10;
 
     private void Start()
     {
@@ -84,6 +87,19 @@ public class PlayerMovement : MonoBehaviour
 
         wasGrounded = isGrounded; // Update grounded state for the next frame
     }
+    
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Catapult")
+        {
+            Catapult();
+        }
+    }
+    
+    void Catapult()
+    {
+        rb.velocity = new Vector3(catapultXValue, catapultYValue, 0);
+    }
 
     private void MovePlayer()
     {
@@ -112,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+    
 
     private void RotatePlayer()
     {
