@@ -1,18 +1,17 @@
-# [TASK NAME]
+# 3D Platformer - Polish
 
-[Module Name]
+Fundementals of Game Development
 
-[Student Name]
+Callum Wade 
 
-[Student ID]
+2404781
 
 ## Research
 
 ### What sources or references have you identified as relevant to this task?
-
-- What type of sources did you identity and want to explore? How would you justify it in reference to the brief set? Think about the focus of the brief.
-- What type of sources do you want to avoid? How could these kinds of sources be detrimental to the user experience, immersion or implementation?
-
+```markdown
+- The thing that I found myself researching for this task is how to create particle systems in Unity and how to activate them with a script.
+```
 
 ```Markdown
 # Example
@@ -118,23 +117,9 @@ Video game development (2024) In: Wikipedia. At: https://en.wikipedia.org/w/inde
 
 ## Declared Assets
 
-- Please use the [harvard referencing convention](https://mylibrary.uca.ac.uk/referencing).
+Boost Panel - Download Free 3D model by Xane Myers (@Xane_MM) (2017) At: https://sketchfab.com/models/6b70e168530c40aeb237764766d6eb69/embed?autostart=1 (Accessed  08/11/2024).
+Bounce Pad - Download Free 3D model by amftwg (2022) At: https://sketchfab.com/models/023a85a6a63e4d39937bf8cb3e38ae21/embed?autostart=1 (Accessed  08/11/2024).
+Low Poly Rock Pack | 3D Environments | Unity Asset Store (s.d.) At: https://assetstore.unity.com/packages/3d/environments/low-poly-rock-pack-57874 (Accessed  08/11/2024).
+Stylized Astronaut | Characters | Unity Asset Store (s.d.) At: https://assetstore.unity.com/packages/3d/characters/humanoids/sci-fi/stylized-astronaut-114298 (Accessed  08/11/2024).
 
-Infinity Blade: Adversaries in Epic Content - UE Marketplace (s.d.) At: https://www.unrealengine.com/marketplace/en-US/product/infinity-blade-enemies (Accessed  09/09/2024).
 
----
-
-```Markdown
-# General Tips
-
-- Use plenty of images and videos to demonstrate your point. You can embed YouTube tutorials, your own recordings, etc.
-- Always reference! Even documentation, tutorials and anything you used for your assignment. Use an inline reference for the sentence and a bibliography reference at the end.
-- Word count is not important, you can also chose to use bullet points. As long as it is clear and readable, the format your decide to use can be flexible.
-- You are free to use AI but please ensure you have made a note in the declared assets, for example if you have a script called Test.cs , you should note that AI was used to in the creation of this script. You can use a bullet point list for each asset used like:
-
-The following assets were created or modified with the use of GPT 4o:
-- Test.cs
-- AnotherScript.cs
-- Development Journal.html
-
-```
