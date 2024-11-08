@@ -115,16 +115,30 @@ The particle affects make the gameplay feel so much more realistic then if they 
 
 ### What creative or technical approaches did you use or try, and how did this contribute to the outcome?
 
-- Did you try any new software or approaches? How did the effect development?
+- The technical approach I took for this part of the project is using an array to access the different audios to play them.
 
+```csharp
+private AudioSource[] audioSources;
+private int groundAudioIndex = 0; // Audio for landing
+private int moveAudioIndex = 1; // Audio for walking/moving
+```
+```csharp
+audioSources[moveAudioIndex].Play();
+audioSources[moveAudioIndex].Stop();
+```
+```csharp
+audioSources[groundAudioIndex].Play();
+```
+*Figure 5,6 and 7. Shows the code I used to access the audio sources from an array*
 <br>
-
-![onhover image description](https://beforesandafters.com/wp-content/uploads/2021/05/Welcome-to-Unreal-Engine-5-Early-Access-11-16-screenshot.png)
-*Figure 2. An example of an image as a figure. This image shows where to package your Unreal project!.*
 
 ### Did you have any technical difficulties? If so, what were they and did you manage to overcome them?
 
-- Did you have any issues completing the task? How did you overcome them?
+The difficulty I had with this part of the project came along when I tried to use rays to check if the player was grounded to trigger the landing audio and particle system. Also implementing these into my game messed with the double jumping. This caused my script to have to get more complicated with the jumping while also trying to fix the audio and particle system. 
+<br>
+I managed to fix the jumping by adding a jumpCount variable which allows the player to jump till they reach the maximum amount of jumps instead of checking if the player is grounded and using that to allow the player to press space twice, which is what stopped working.
+<br>
+To deal with the audio and particle system problem, I removed all the raycasts and instead just used collisions to check if the player is colliding with an object that is tagged "Ground" and then activating the audio and particle system.
 
 ## Outcome
 
