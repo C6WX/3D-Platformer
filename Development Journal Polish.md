@@ -160,24 +160,26 @@ Here you can put links required for delivery of the task, ensure they are proper
 
 ### What did or did not work well and why?
 
-- What did not work well? What parts of the assignment that you felt did not fit the brief or ended up being lacklustre.
-- What did you think went very well? Were there any specific aspects you thought were very good?
+- Something that went well is that I was able to use arrays to use multiple audio sources in one script. This worked well and also allowed me to learn more about using arrays while programming with them
+- What didn't go well is the errors that occurred when trying to implement the audio and particle systems related to the jumping as this stopped the jumping from working and also made the audio and particles activate too soon.
 
 ### What would you do differently next time?
 
-- Are there any new approaches, methodologies or different software that you wish to incorporate if you have another chance?
-- Is there another aspect you believe should have been the focus?
+- Next time I would move on from a problem and come back to it later as I ended up getting annoyed after getting stuck on a bug that I wasn't able to fix till the next day. 
 
 ## Bibliography
 
 Technologies, U. (s.d.) Unity - Manual: Particle systems. At: https://docs.unity3d.com/6000.0/Documentation/Manual/ParticleSystems.html (Accessed  08/11/2024).
-
+<br>
 
 ## Declared Assets
 
 Boost Panel - Download Free 3D model by Xane Myers (@Xane_MM) (2017) At: https://sketchfab.com/models/6b70e168530c40aeb237764766d6eb69/embed?autostart=1 (Accessed  08/11/2024).
+<br>
 Bounce Pad - Download Free 3D model by amftwg (2022) At: https://sketchfab.com/models/023a85a6a63e4d39937bf8cb3e38ae21/embed?autostart=1 (Accessed  08/11/2024).
+<br>
 Low Poly Rock Pack | 3D Environments | Unity Asset Store (s.d.) At: https://assetstore.unity.com/packages/3d/environments/low-poly-rock-pack-57874 (Accessed  08/11/2024).
+<br>
 Stylized Astronaut | Characters | Unity Asset Store (s.d.) At: https://assetstore.unity.com/packages/3d/characters/humanoids/sci-fi/stylized-astronaut-114298 (Accessed  08/11/2024).
 
 
