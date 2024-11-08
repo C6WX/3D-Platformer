@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 10f;
+    public float moveSpeed = 2f;
+    private float originalMoveSpeed;
+    private Vector3 v3Velocity;
     public float xRotateSpeed = 10f;
     public float yRotateSpeed = 10f;
     public Vector3 jump;
@@ -41,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        originalMoveSpeed = moveSpeed;
         rb = GetComponent<Rigidbody>();
         jump = new Vector3(0.0f, 2.0f, 0.0f);
         _mainCamera = Camera.main;
@@ -61,8 +64,9 @@ public class PlayerMovement : MonoBehaviour
 
         // Handle jumping: Check if the player is grounded or has room for a double jump
         if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (isGrounded || jumpCount < maxJumpCount) // Allow jump if grounded or double jumping
+        {       
+            // Allow jump if grounded or double jumping
+            if (isGrounded || jumpCount < maxJumpCount)
             {
                 rb.AddForce(jump * jumpForce, ForceMode.Impulse);
                 jumpCount++; // Increment the jump count
@@ -78,27 +82,33 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Handle landing audio (only play once when the player lands)
-        if (isGrounded && !wasGrounded)
+        if (isGrounded && v3Velocity.y == 0)
         {
             audioSources[groundAudioIndex].Play(); // Play landing sound
             Debug.Log("Landing audio played.");
             TriggerDustEffect(); // Trigger dust effect
         }
-
-        wasGrounded = isGrounded; // Update grounded state for the next frame
+        
     }
-    
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Catapult")
         {
-            Catapult();
+            rb.velocity = new Vector3(catapultXValue, catapultYValue, 0);
+        }
+
+        if (other.gameObject.tag == "SpeedPad")
+        {
+            moveSpeed = 5f;
+            StartCoroutine(IncreaseSpeed());
         }
     }
-    
-    void Catapult()
+
+    IEnumerator IncreaseSpeed()
     {
-        rb.velocity = new Vector3(catapultXValue, catapultYValue, 0);
+       yield return new WaitForSeconds(10);
+       moveSpeed = originalMoveSpeed;
     }
 
     private void MovePlayer()
@@ -142,6 +152,8 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         RaycastHit hit;
+        //gets the player's velocity
+        v3Velocity = rb.velocity;
 
         // Raycast downwards to check if the player is grounded
         if (Physics.Raycast(transform.position, Vector3.down, out hit, groundRayLength, groundLayer))
@@ -153,14 +165,14 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log("Ground detected by raycast.");
             }
         }
-        else
-        {
-            if (isGrounded) // If the player is in the air, update isGrounded to false
-            {
-                isGrounded = false;
-                Debug.Log("Player is in the air, not grounded.");
-            }
-        }
+        // else
+        // {
+        //     if (isGrounded) // If the player is in the air, update isGrounded to false
+        //     {
+        //         isGrounded = false;
+        //         Debug.Log("Player is in the air, not grounded.");
+        //     }
+        // }
 
         // Debugging: Draw the ray in the scene view to visualize ground detection
         Debug.DrawRay(transform.position, Vector3.down * groundRayLength, rayColor);
@@ -170,7 +182,7 @@ public class PlayerMovement : MonoBehaviour
     private void TriggerDustEffect()
     {
         // Ensure that dust particles are only triggered when the player actually lands
-        if (dustParticleSystem != null && isGrounded)
+        if (dustParticleSystem != null && isGrounded && v3Velocity.y == 0)
         {
             // Trigger the dust effect only when grounded
             dustEmission.enabled = true;
