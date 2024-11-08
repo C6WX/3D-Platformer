@@ -269,11 +269,6 @@ MonoBehaviour:
   jumpForce: 2
   isGrounded: 0
   wasGrounded: 0
-  groundRayLength: 1.1
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  rayColor: {r: 1, g: 0, b: 0, a: 1}
   dustParticleSystem: {fileID: 3479388269508282388}
   maxJumpCount: 2
   catapultXValue: 10
@@ -497,7 +492,7 @@ Transform:
   m_GameObject: {fileID: 6520196236521248433}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.991, z: 0}
+  m_LocalPosition: {x: 0, y: -0.875, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -586,7 +581,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.1
       minScalar: 5
       maxCurve:
         serializedVersion: 2

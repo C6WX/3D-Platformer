@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
         // Handle jumping: Check if the player is grounded or has room for a double jump
         if (Input.GetKeyDown(KeyCode.Space))
         {   
-            wasGrounded = isGrounded;
+            //wasGrounded = isGrounded;
             // Allow jump if grounded or double jumping
             if (isGrounded || jumpCount < maxJumpCount)
             {
