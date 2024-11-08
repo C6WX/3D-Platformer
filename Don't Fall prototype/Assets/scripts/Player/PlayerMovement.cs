@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Build;
@@ -64,7 +65,8 @@ public class PlayerMovement : MonoBehaviour
 
         // Handle jumping: Check if the player is grounded or has room for a double jump
         if (Input.GetKeyDown(KeyCode.Space))
-        {       
+        {   
+            wasGrounded = isGrounded;
             // Allow jump if grounded or double jumping
             if (isGrounded || jumpCount < maxJumpCount)
             {
@@ -77,17 +79,19 @@ public class PlayerMovement : MonoBehaviour
                     jumpCount = 1; // Set to 1 because the first jump is still a valid jump
                 }
 
+                
                 isGrounded = false; // Player is no longer grounded
             }
         }
 
+        //wasGrounded = isGrounded;
         // Handle landing audio (only play once when the player lands)
-        if (isGrounded && v3Velocity.y == 0)
+        /*if (isGrounded && v3Velocity.y == 0 && wasGrounded == false)
         {
             audioSources[groundAudioIndex].Play(); // Play landing sound
             Debug.Log("Landing audio played.");
             TriggerDustEffect(); // Trigger dust effect
-        }
+        }*/
         
     }
 
@@ -156,7 +160,7 @@ public class PlayerMovement : MonoBehaviour
         v3Velocity = rb.velocity;
 
         // Raycast downwards to check if the player is grounded
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, groundRayLength, groundLayer))
+        /*if (Physics.Raycast(transform.position, Vector3.down, out hit, groundRayLength, groundLayer))
         {
             if (!isGrounded) // Only set to grounded if it's the first time landing
             {
@@ -164,7 +168,7 @@ public class PlayerMovement : MonoBehaviour
                 jumpCount = 0; // Reset jump count when the player touches the ground
                 Debug.Log("Ground detected by raycast.");
             }
-        }
+        }*/
         // else
         // {
         //     if (isGrounded) // If the player is in the air, update isGrounded to false
@@ -182,12 +186,29 @@ public class PlayerMovement : MonoBehaviour
     private void TriggerDustEffect()
     {
         // Ensure that dust particles are only triggered when the player actually lands
-        if (dustParticleSystem != null && isGrounded && v3Velocity.y == 0)
+        if (dustParticleSystem != null)
         {
             // Trigger the dust effect only when grounded
             dustEmission.enabled = true;
             dustParticleSystem.Play();
             Debug.Log("Dust particle system triggered.");
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+            TriggerDustEffect();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Ground")
+        {
+            isGrounded = false;
         }
     }
 }
