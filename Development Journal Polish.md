@@ -41,22 +41,77 @@ The particle affects make the gameplay feel so much more realistic then if they 
 
 ### What was the process of completing the task? What influenced your decision making?
 
-- What was the process of completing the task at hand? Did you do any initial planning?
-- Did you receive any feedback from users, peers or lecturers? How did you react to it?
+- The first step I took for this task was to find audio for walking and landing to use online and then importing them into unity and I attatched them to audio sources on the main character to be activated within the code.
+- I then started programming the walking audio so that whenever the player is moving and the walking audio isn't playing, it plays.
 
 <br>
 
 ```csharp
-using UnityEngine;
-public class HelloWorld : MonoBehaviour 
-{
-    public void Start() 
-    {
-        Debug.Log("Hello World!");
-    }
-}
+        if (movement.magnitude > 0)
+        {
+            rb.AddForce(movement * moveSpeed);
+
+            // Play walking audio only if it's not already playing
+            if (!audioSources[moveAudioIndex].isPlaying)
+            {
+                audioSources[moveAudioIndex].Play();
+                Debug.Log("Walking audio started.");
+            }
+        }
+        else
+        {
+            if (audioSources[moveAudioIndex].isPlaying)
+            {
+                audioSources[moveAudioIndex].Stop();
+                Debug.Log("Walking audio stopped.");
+            }
+        }
 ```
-*Figure 1. An example of using a script as a figure. This script has a `Start()` method!*
+*Figure 1. Shows my script that plays the walking audio when the player is moving and the audio isn't already playing. If the player stops moving and the audio is playing, the audio stops playing.
+
+- Next I worked on getting the landing audio to play when the player lands back on the ground.
+
+```csharp
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+            audioSources[groundAudioIndex].Play();
+        }
+    }
+```
+*Figure 2. This is the script I used to play the landing audio whenever the player collides with the ground*
+
+- After getting the audio working, I got the particle system to player when the player lands.
+
+```csharp
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+            audioSources[groundAudioIndex].Play();
+            TriggerDustAffect();
+        }
+    } 
+```
+*Figure 3. The script I used to activate the TriggerDustEffect method*
+
+```csharp
+   private void TriggerDustAffect()
+    {
+        // Ensure that dust particles are only triggered when the player actually lands
+        if (dustParticleSystem != null)
+        {
+            // Trigger the dust effect only when grounded
+            dustEmission.enabled = true;
+            dustParticleSystem.Play();
+            Debug.Log("Dust particle system triggered.");
+        }
+    }
+```
+*Figure 4. This script checks that the dust particle system exists then it enables the particle system then plays it.*
 
 ### What creative or technical approaches did you use or try, and how did this contribute to the outcome?
 
