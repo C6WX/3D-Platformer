@@ -9,8 +9,9 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 2f;
     private float originalMoveSpeed;
     private Vector3 v3Velocity;
-    public float xRotateSpeed = 10f;
-    public float yRotateSpeed = 10f;
+    public float xRotateSpeed = 200f;
+    public float yRotateSpeed = 100f;
+    private float xRotation = 0f; 
     public Vector3 jump;
     public float jumpForce = 2.0f;
 
