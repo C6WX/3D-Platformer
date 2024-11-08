@@ -145,7 +145,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Trigger the dust particle effect when the player lands
-    private void TriggerDustEffect()
+    private void TriggerDustAffect()
     {
         // Ensure that dust particles are only triggered when the player actually lands
         if (dustParticleSystem != null)
@@ -162,7 +162,8 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "Ground")
         {
             isGrounded = true;
-            TriggerDustEffect();
+            audioSources[groundAudioIndex].Play();
+            TriggerDustAffect();
         }
     }
 
