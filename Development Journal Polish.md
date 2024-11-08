@@ -146,6 +146,8 @@ Here you can put links required for delivery of the task, ensure they are proper
 
 - [Example Video Link](https://youtu.be/yhSYsbFSK6Y)
 
+<img width="300" height="300" src="Level 1 Screenshot.png"> 
+
 ## Critical Reflection
 
 ### What did or did not work well and why?
@@ -171,5 +173,8 @@ Bounce Pad - Download Free 3D model by amftwg (2022) At: https://sketchfab.com/m
 Low Poly Rock Pack | 3D Environments | Unity Asset Store (s.d.) At: https://assetstore.unity.com/packages/3d/environments/low-poly-rock-pack-57874 (Accessed  08/11/2024).
 <br>
 Stylized Astronaut | Characters | Unity Asset Store (s.d.) At: https://assetstore.unity.com/packages/3d/characters/humanoids/sci-fi/stylized-astronaut-114298 (Accessed  08/11/2024).
+<br>
+The Portal Collection | 3D Fantasy | Unity Asset Store (s.d.) At: https://assetstore.unity.com/packages/3d/environments/fantasy/the-portal-collection-205438 (Accessed  08/11/2024).
+
 
 
