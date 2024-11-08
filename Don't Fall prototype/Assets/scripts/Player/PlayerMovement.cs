@@ -26,11 +26,6 @@ public class PlayerMovement : MonoBehaviour
     private int groundAudioIndex = 0; // Audio for landing
     private int moveAudioIndex = 1; // Audio for walking/moving
 
-    // Raycast settings
-    public float groundRayLength = 1.1f; // Length of the ray used for ground detection
-    public LayerMask groundLayer; // The layer mask to detect ground objects
-    public Color rayColor = Color.red; // Color for visualizing the ray in the editor
-
     // Dust particle system
     public ParticleSystem dustParticleSystem; // Reference to the particle system
     private ParticleSystem.EmissionModule dustEmission; // To control emission of dust particles
@@ -78,21 +73,9 @@ public class PlayerMovement : MonoBehaviour
                 {
                     jumpCount = 1; // Set to 1 because the first jump is still a valid jump
                 }
-
-                
                 isGrounded = false; // Player is no longer grounded
             }
         }
-
-        //wasGrounded = isGrounded;
-        // Handle landing audio (only play once when the player lands)
-        /*if (isGrounded && v3Velocity.y == 0 && wasGrounded == false)
-        {
-            audioSources[groundAudioIndex].Play(); // Play landing sound
-            Debug.Log("Landing audio played.");
-            TriggerDustEffect(); // Trigger dust effect
-        }*/
-        
     }
 
     void OnTriggerEnter(Collider other)
@@ -143,7 +126,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
-
     private void RotatePlayer()
     {
         xrValue = Input.GetAxis("Mouse X") * xRotateSpeed * Time.deltaTime;
@@ -158,28 +140,7 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit hit;
         //gets the player's velocity
         v3Velocity = rb.velocity;
-
-        // Raycast downwards to check if the player is grounded
-        /*if (Physics.Raycast(transform.position, Vector3.down, out hit, groundRayLength, groundLayer))
-        {
-            if (!isGrounded) // Only set to grounded if it's the first time landing
-            {
-                isGrounded = true;
-                jumpCount = 0; // Reset jump count when the player touches the ground
-                Debug.Log("Ground detected by raycast.");
-            }
-        }*/
-        // else
-        // {
-        //     if (isGrounded) // If the player is in the air, update isGrounded to false
-        //     {
-        //         isGrounded = false;
-        //         Debug.Log("Player is in the air, not grounded.");
-        //     }
-        // }
-
-        // Debugging: Draw the ray in the scene view to visualize ground detection
-        Debug.DrawRay(transform.position, Vector3.down * groundRayLength, rayColor);
+        
     }
 
     // Trigger the dust particle effect when the player lands
