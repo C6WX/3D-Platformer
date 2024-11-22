@@ -113,7 +113,7 @@ One technical difficulty I had was with resetting the player's speed to the orig
 
 ### What did or did not work well and why?
 
-- I felt that this section went very well. This is because most of this section of the assingment, I have done in previous projects, so it was a matter of looking back on old work and implementing it into the game.
+I felt that this section went very well. This is because most of this section of the assingment, I have done in previous projects, so it was a matter of looking back on old work and implementing it into the game.
 
 ### What would you do differently next time?
 
