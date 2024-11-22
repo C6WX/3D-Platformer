@@ -97,20 +97,14 @@ IEnumerator IncreaseSpeed()
 
 ### What creative or technical approaches did you use or try, and how did this contribute to the outcome?
 
-- Did you try any new software or approaches? How did the effect development?
+One thing that I tried which is still new to me is coroutines. I have previously used them in past projects but I am still not confident with them so it was still difficult when using them and remembering how to use them but once it was all done I was very pleased with the result and how well it worked with the speed pad.
 
-<br>
-
-![onhover image description](https://beforesandafters.com/wp-content/uploads/2021/05/Welcome-to-Unreal-Engine-5-Early-Access-11-16-screenshot.png)
-*Figure 2. An example of an image as a figure. This image shows where to package your Unreal project!.*
 
 ### Did you have any technical difficulties? If so, what were they and did you manage to overcome them?
 
-- Did you have any issues completing the task? How did you overcome them?
+One technical difficulty I had was with resetting the player's speed to the original speed. This is becuase, when resetting the value, it wouldn't go back to it's original. So to get around this problem, I created a new integer variable that set it's value to the player's speed at the start of the level and then made it so that after the 10 seconds are over, player speed is set the the new original speed variable.
 
 ## Outcome
-
-Here you can put links required for delivery of the task, ensure they are properly labelled appropriately and the links function. The required components can vary between tasks, you can find a definative list in the Assessment Information. Images and code snippets can be embedded and annotated if appropriate.
 
 - [Video Demonstration](https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley)
 - [Game Build](https://samperson.itch.io/desktop-goose)
