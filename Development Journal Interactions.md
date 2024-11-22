@@ -113,13 +113,11 @@ One technical difficulty I had was with resetting the player's speed to the orig
 
 ### What did or did not work well and why?
 
-- What did not work well? What parts of the assignment that you felt did not fit the brief or ended up being lacklustre.
-- What did you think went very well? Were there any specific aspects you thought were very good?
+- I felt that this section went very well. This is because most of this section of the assingment, I have done in previous projects, so it was a matter of looking back on old work and implementing it into the game.
 
 ### What would you do differently next time?
 
-- Are there any new approaches, methodologies or different software that you wish to incorporate if you have another chance?
-- Is there another aspect you believe should have been the focus?
+Next time I would use an int variable for the time that is waited before the player's speed is set back to normal. This is because not all levels will give the player the same amount of time to be faster so it would be much simpler to use a varialbe that could be changed in the inspector.
 
 ## Bibliography
 
