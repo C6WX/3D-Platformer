@@ -24,8 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private AudioSource[] audioSources;
 
     // Indices for specific audio sources
-    private int groundAudioIndex = 0; // Audio for landing
-    private int moveAudioIndex = 1; // Audio for walking/moving
+    private int groundAudioIndex = 0; 
+    private int moveAudioIndex = 1; 
 
     // Dust particle system
     public ParticleSystem dustParticleSystem; // Reference to the particle system

@@ -44,3 +44,5 @@ Don't Fall prototype/.vs/Don't Fall prototype/FileContentIndex/a87b2815-9e66-4f8
 Don't Fall prototype/Logs/AssetImportWorker2.log
 Don't Fall prototype/Logs/AssetImportWorker3.log
 Don't Fall prototype/Logs/AssetImportWorker2.log
+*.log
+*.json
