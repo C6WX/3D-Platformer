@@ -9,15 +9,18 @@ public class CameraRotation3 : MonoBehaviour
     public float minZoomDistance = 2f, maxZoomDistance = 15f;
 
     private float _rotationX = 0f, _rotationY = 0f, _currentZoomDistance = 10f;
-
+    
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         if (target == null) target = GameObject.FindWithTag("Player").transform;
+        // Quaternion startRotation = Quaternion.Euler(17.629f, 0f, 0f);
+        // transform.rotation = startRotation;
     }
 
     private void Update()
     {
+        
         float mouseX = Input.GetAxis("Mouse X") * rotationSpeed;
         float mouseY = Input.GetAxis("Mouse Y") * rotationSpeed;
 

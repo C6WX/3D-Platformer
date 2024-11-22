@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 v3Velocity;
     public float xRotateSpeed = 200f;
     public float yRotateSpeed = 100f;
-    private float xRotation = 0f; 
     public Vector3 jump;
     public float jumpForce = 2.0f;
 
@@ -138,7 +137,6 @@ public class PlayerMovement : MonoBehaviour
     // Use Raycast to check if the player is grounded
     private void FixedUpdate()
     {
-        RaycastHit hit;
         //gets the player's velocity
         v3Velocity = rb.velocity;
         
