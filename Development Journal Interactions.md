@@ -99,15 +99,15 @@ IEnumerator IncreaseSpeed()
 
 One thing that I tried which is still new to me is coroutines. I have previously used them in past projects but I am still not confident with them so it was still difficult when using them and remembering how to use them but once it was all done I was very pleased with the result and how well it worked with the speed pad.
 
-
 ### Did you have any technical difficulties? If so, what were they and did you manage to overcome them?
 
 One technical difficulty I had was with resetting the player's speed to the original speed. This is becuase, when resetting the value, it wouldn't go back to it's original. So to get around this problem, I created a new integer variable that set it's value to the player's speed at the start of the level and then made it so that after the 10 seconds are over, player speed is set the the new original speed variable.
 
 ## Outcome
 
-- [Video Demonstration](https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley)
-- [Game Build](https://samperson.itch.io/desktop-goose)
+- [Video Demonstration]()
+- [Game Build]()
+- [Github Link](https://github.com/C6WX/3D-Platformer)
 
 ## Critical Reflection
 
