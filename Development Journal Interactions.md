@@ -105,8 +105,8 @@ One technical difficulty I had was with resetting the player's speed to the orig
 
 ## Outcome
 
-- [Video Demonstration]()
-- [Game Build]()
+- [Video Demonstration](https://youtu.be/5iHQQm7FDqI)
+- [Game Build (itch.io)](https://c6wx.itch.io/dont-fall)
 - [Github Link](https://github.com/C6WX/3D-Platformer)
 
 ## Critical Reflection
