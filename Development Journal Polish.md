@@ -146,9 +146,9 @@ Here you can put links required for delivery of the task, ensure they are proper
 
 - [Youtube Video](https://youtu.be/yhSYsbFSK6Y)
 
-<img width="500" height="500" src="Level 1 Screenshot.png"> 
-<img width="500" height="500" src="Level 2 Screenshot.png"> 
-<img width="500" height="500" src="level 3 Screenshot.png"> 
+<img width="500" height="500" src="https://raw.githubusercontent.com/C6WX/3D-Platformer/refs/heads/main/Level%201%20Screenshot.png"> 
+<img width="500" height="500" src="https://raw.githubusercontent.com/C6WX/3D-Platformer/refs/heads/main/Level%202%20Screenshot.png"> 
+<img width="500" height="500" src="https://raw.githubusercontent.com/C6WX/3D-Platformer/refs/heads/main/level%203%20Screenshot.png"> 
 
 ## Critical Reflection
 
